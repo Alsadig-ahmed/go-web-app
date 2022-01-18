@@ -1,9 +1,13 @@
 function makeAjaxCall() {
-    fetch('/api/fruits')
+    fetch('/api/request')
     .then(function(response) {
-        return response.text();
+        return response.json();
     })
-    .then(function(text) {
-        alert(`we called out to the api via ajax and got this response => ${text}`);
+    .then(function(msg) {
+      let message = msg.Body;
+     let output = document.getElementById("output");
+     output.innerHTML = message
+     output.style.boxShadow = "0 0 1rem .2rem";
+     output.style.padding ="1rem 0"
     });
 }
