@@ -6,6 +6,10 @@ import (
 	"github.com/gofiber/fiber/v2"
 )
 
+type Message struct {
+	Body string
+}
+
 func main() {
 	app := fiber.New()
 
@@ -14,6 +18,13 @@ func main() {
 
 	app.Get("/hello", func(c *fiber.Ctx) error {
 		return c.SendString("Hello, World 👋!")
+	})
+
+	// working with json
+	msg := Message{"your request has been processed successfully"}
+
+	app.Get("/api/request", func(c *fiber.Ctx) error {
+		return c.JSON(msg)
 	})
 	app.Get("/h", func(c *fiber.Ctx) error {
 		return c.SendFile("index.html")
