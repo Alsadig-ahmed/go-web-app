@@ -14,10 +14,15 @@ button {
     border-radius: 30px;
     padding: 10px 20px;
     color: #FFF;
-    background-color: #00acd7;
+    background-color: #d35400;
     cursor: pointer;
 }
 
 button:hover {
     background-color: #000;
+}
+#output{
+    border-radius: 12%;
+    background-color: rgb(226, 226, 226);
+    box-shadow: 0 0 .2rem .2rem;
 }
